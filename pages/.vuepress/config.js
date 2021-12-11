@@ -4,7 +4,7 @@ module.exports = {
     title: 'Amiya-Bot',
     description: '极简易部署的《明日方舟》机器人',
     dest: 'dist',
-    base: '/Amiya-Bot/',
+    base: '/',
     plugins: [
         '@vuepress/back-to-top',
         '@vuepress/plugin-blog'
