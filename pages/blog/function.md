@@ -2,12 +2,12 @@
 
 ::: tip 提示<br>
 使用 Amiya 功能的时候，请务必在句子头部带上**阿米娅的名字或昵称**！<br>
-以下功能的示例语句仅供参考，Amiya 采用了关键词识别技术，会识别句子成分并自动选择功能，不需要严格按照格式
+以下功能的示例语句仅供参考，Amiya 采用了关键词识别技术，会识别句子成分并自动选择功能，不需要严格按照格式使用
 :::
 
 ::: danger 警告<br>
 **禁言会导致 Amiya 退群！！！**<br>
-因框架机制的原因，新进的群员可能会在一段时间内无法唤起 Amiya，请耐心等候 Amiya 刷新或主动重启 Mirai
+因框架机制的原因，新进的群员可能会在一段时间内无法唤起 Amiya，请耐心等候 Amiya 刷新或主动重新登录 Mirai 登录的 QQ 账号
 :::
 
 ## 群管理员功能
@@ -123,9 +123,11 @@ Amiya 支持使用别名进行功能使用，**但首先，你需要正确的设
 
 ## 查看阿米娅的源代码
 
-若你有过使用 mirai-api-http 或其他类似框架的经验，你现在可以轻松搭建自己的 Amiya<br>
-Github 地址：<br>
-[https://github.com/AmiyaBot/Amiya-Bot](https://github.com/AmiyaBot/Amiya-Bot)
+若你有过使用 mirai-api-http 或其他类似框架的经验，你可以轻松搭建自己的 Amiya<br>
+
+[Github](https://github.com/AmiyaBot/Amiya-Bot)
+
+[项目官网](https://www.amiya.cn)
 
 ## 帮助
 
@@ -133,5 +135,5 @@ Github 地址：<br>
 开发上的问题请前往 [issues](https://github.com/AmiyaBot/Amiya-Bot/issues)
 :::
 
-若对 Amiya 的使用有任何疑问、BUG 反馈、建议或申请 Amiya 加入自己的群，请前往【Amiya的测试工房】，点击群号加入 [362165038](https://jq.qq.com/?_wv=1027&k=4HKMpUZL)
+若对 Amiya 的使用有任何疑问、BUG 反馈、建议或申请 Amiya Demo 加入自己的群，请前往【Amiya的测试工房】，点击群号加入 [362165038](https://jq.qq.com/?_wv=1027&k=4HKMpUZL)
 

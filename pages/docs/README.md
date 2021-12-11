@@ -17,7 +17,7 @@ sidebar: false
     - 注意：本项目不负责在部署 mirai 组件时遇到的问题，请勿提交相关 issues
 - 开发或代码部署需要准备 Python 3.7 ~ 3.8 环境
 
-### 或者你只是想自己的群里拥有一个 Amiya
+### 或者你只是想自己的群里拥有一个 Amiya ？
 
 Amiya 为开源项目，你可以寻找所有部署了 Amiya 的作者向他请求 Amiya 加入你的群<br>
-想寻找官方的 Amiya 可以加入 [Amiya的测试工房](/blog/notice/) 咨询
+想寻找官方的 Amiya Demo 可以加入 [Amiya的测试工房](/blog/notice/) 咨询
