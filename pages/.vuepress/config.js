@@ -1,30 +1,33 @@
 const {nav, sidebar} = require('../nav')
+const {themeConfig, blogConfig} = require('./reco')
 
 module.exports = {
     title: 'Amiya-Bot',
-    description: '极简易部署的《明日方舟》机器人',
-    dest: 'dist',
-    base: '/',
-    plugins: [
-        '@vuepress/back-to-top',
-        '@vuepress/plugin-blog'
+    description: '功能强大，简单易用的《明日方舟》机器人',
+    head: [
+        [
+            'meta',
+            {
+                name: 'viewport',
+                content: 'width=device-width,initial-scale=1,user-scalable=no'
+            }
+        ]
     ],
+    dest: 'dist',
     markdown: {
         lineNumbers: true
     },
+    theme: 'reco',
     themeConfig: {
         nav,
         sidebar,
 
         logo: '/logo.png',
-
-        smoothScroll: true,
-        displayAllHeaders: true,
+        bgImage: '/bg.svg',
 
         lastUpdated: '上次更新',
 
-        repo: 'AmiyaBot/Amiya-Bot',
-        repoLabel: '查看源码'
+        ...themeConfig
     },
-    extend: '@vuepress/theme-default'
+    blogConfig: blogConfig
 }

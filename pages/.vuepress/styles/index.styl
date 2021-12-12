@@ -1,10 +1,25 @@
 @font-face {
     font-family: 'Harmony';
-    src: url('/HarmonyOS_Sans_SC.ttf');
+    src: url('/font/HarmonyOS_Sans_SC.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 * {
     font-family: 'Harmony', Helvetica, Arial, sans-serif !important;
+}
+
+
+.home:before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position fixed;
+    top: 0;
+    left: 0;
+    background: url(/bg.svg) center / cover no-repeat;
+}
+
+.title > br:last-child {
+    display: none;
 }
