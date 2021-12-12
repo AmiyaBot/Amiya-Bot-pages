@@ -18,7 +18,7 @@ const nav = [
     },
     {text: '公告', link: '/timeline/', icon: 'reco-tongzhi'},
     {text: '留言板', link: '/board/', icon: 'reco-suggestion'},
-    {text: '查看源码', link: 'https://www.amiya.cn', icon: 'reco-github'}
+    {text: '查看源码', link: 'https://github.com/AmiyaBot/Amiya-Bot', icon: 'reco-github'}
 ]
 const sidebar = 'auto'
 
