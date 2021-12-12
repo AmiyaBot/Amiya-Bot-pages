@@ -5,6 +5,8 @@ set -e
 npm run build
 cd dist
 
+echo 'www.amiya.cn' > CNAME
+
 git init
 git add -A
 git commit -m 'deploy'
