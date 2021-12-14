@@ -1,20 +1,14 @@
----
-title: 通过代码部署 Amiya
----
+# 通过代码部署 Amiya
 
-::: tip <br>
-简单三步，启动你的 Amiya
-:::
+> 简单三步，启动你的 Amiya
 
-## 开始部署
-
-### 安装 python 依赖
+1. 安装 python 依赖
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 配置`config.yaml`
+2. 配置`config.yaml`
 
 ```yaml
 # 账号设置
@@ -72,7 +66,7 @@ setting:
     offline: false
 ```
 
-### 启动 Amiya 入口程序
+3. 启动 Amiya 入口程序
     - 在你的 Python 环境内运行主程序文件 `amiya.py` 即可启动 Amiya
     - 若你尚未部署 mirai 套件，也可运行测试程序 `quickTest.py` 进行预部署
 
@@ -80,7 +74,7 @@ setting:
 python amiya.py
 ```
 
-## 功能测试方式
+### 功能测试方式
 
 - 离线测试
     - 离线测试不需要启动 mirai 套件
