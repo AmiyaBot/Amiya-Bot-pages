@@ -1,10 +1,12 @@
-# 使用 Amiya-Bot-console
+---
+title: 使用 Amiya-Bot-console
+---
 
-::: tip 提示<br>
+::: tip <br>
 Amiya-Bot console 会在启动时自动下载并按照配置在本地部署，可直接通过浏览器访问
 :::
 
-### 配置
+## 配置
 
 检查 config.yaml 的配置项。Amiya 默认配置了全局 IP `0.0.0.0` 以及 `80` 端口。修改后重启 Amiya 生效
 
@@ -28,6 +30,6 @@ console:
 2. 用浏览器打开配置的 url，如果是默认配置，则直接访问 `127.0.0.1`
 3. 登录账号并开始管理你的 Amiya
 
-### 操作指南
+## 操作指南
 
 > 敬请期待...
