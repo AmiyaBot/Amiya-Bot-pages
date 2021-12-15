@@ -6,8 +6,8 @@ const themeConfig = {
         avatar: 'retro'
     },
     author: 'Vivien8261',
-    record: '粤ICP备2021107697号-1',
-    startYear: '2019'
+    // record: '粤ICP备2021107697号-1',
+    startYear: '2020'
 }
 
 const blogConfig = {}
