@@ -1,19 +1,9 @@
 @echo off
-start cmd /k "npm run build&&exit"
-cd dist
-for /l %%a in (1,1,25) do (
-echo Waiting Build.
-timeout -t 1 -NOBREAK>nul
+echo. Pushing...
+git init>nul
+git add -A>nul
+git commit -m 'deploy'>nul
+git push -f git@github.com:AmiyaBot/Amiya-Bot-pages.git master:main>nul
 cls
-echo Waiting Build..
-timeout -t 1 -NOBREAK>nul
-cls
-echo Waiting Build...
-timeout -t 1 -NOBREAK>nul
-cls
-)
-cls
-git init
-git add -A
-git commit -m 'deploy'
-git push -f git@github.com:AmiyaBot/Amiya-Bot-pages.git master:gh-pages
+echo. Push complete!
+pause
