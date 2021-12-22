@@ -139,9 +139,6 @@ Amiya 支持使用别名进行功能使用，**但首先，你需要正确的设
 
 [项目官网](https://www.amiya.cn)
 
-::: warning <br>
-本项目**不太适合**作为新手入门学习的项目，如果你以前从未接触过 mirai-api-http/mirai/Python，最好不要将本项目作为入门项目学习<del>，本项目不对钻牛角尖导致直接放弃 mirai-api-http 等行为负责</del>
-:::
 
 ## 帮助
 
