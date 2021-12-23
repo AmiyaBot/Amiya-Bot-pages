@@ -2,6 +2,12 @@
 title: 如何维护
 ---
 
+::: danger <br>
+当前版本存在缺陷，部分配置改动后需重启 Amiya 才能生效
+:::
+
+### 日常维护
+
 ::: tip <br>
 推荐使用 [Amiya-Bot-console](https://github.com/AmiyaBot/Amiya-Bot-console) 获得更好的可视化维护界面，否则部分数据维护需要手动编辑数据库<br>
 使用方法请阅读 [说明文档](/docs/amiyaConsole/)
@@ -19,15 +25,6 @@ title: 如何维护
   ::: warning <br>
   Amiya 会在更新时对下载失败但不影响运行的资源作忽略处理，在第二次启动时跳过下载。如果重要的资源被忽略，请私聊 Amiya 发送`强制更新` 重新检查资源。
   :::
-- 自然语言处理方法和公招图像识别需要调用 [百度智能云](https://cloud.baidu.com/)的接口，如需使用请自行申请并配置
-
-```yaml
-baiduCloud:
-    enable: true
-    appId: 21*****7
-    apiKey: MM************GnL5
-    secretKey: XR*********************U7UM
-```
 
 - 为了防止某个指令会导致 Amiya 与其他机器人互相触发关键词导致恶性死循环，造成不可控的刷屏局面，**请务必设置消息限制**，在与其他机器人触发循环时及时制止
 
@@ -39,4 +36,14 @@ message:
         maxCount: 3
 ```
 
-- 部分配置改动后需重启 Amiya 生效
+### 百度云 API
+
+自然语言处理方法和公招图像识别需要调用 [百度智能云](https://cloud.baidu.com/)的接口，如需使用请自行申请并配置
+
+```yaml
+baiduCloud:
+    enable: true
+    appId: 21*****7
+    apiKey: MM************GnL5
+    secretKey: XR*********************U7UM
+```

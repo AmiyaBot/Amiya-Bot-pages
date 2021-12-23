@@ -1,0 +1,26 @@
+<template>
+    <a @click="download">点击下载最新安装包</a>
+</template>
+
+<script>
+import axios from 'axios'
+
+const cos = 'https://cos.amiyabot.com/package'
+
+export default {
+    name: "downloadPack",
+    methods: {
+        download: function () {
+            axios.get(`${cos}/version.txt`).then(response => {
+                window.open(`${cos}/AmiyaBot-${response.data}.zip`)
+            })
+        }
+    }
+}
+</script>
+
+<style scoped>
+a {
+    cursor: pointer;
+}
+</style>

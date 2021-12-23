@@ -4,6 +4,7 @@
         "build": "vuepress build pages"
     },
     "dependencies": {
+        "axios": "^0.21.4",
         "vuepress": "^1.8.2",
         "watchman": "^1.0.0"
     },

@@ -13,7 +13,7 @@ title: 通过安装包部署 Amiya
 
 ## 下载安装包
 
-- 从 [releases](https://github.com/vivien8261/Amiya-Bot/releases) 里下载最新的安装包，解压到本地任意目录
+- <downloadPack />，解压到本地任意目录
 - 根据 [代码部署](https://github.com/vivien8261/Amiya-Bot/wiki/通过代码部署-Amiya#代码部署) 的第二步填写 `config.yaml` 配置
 - 运行 AmiyaBot.exe
 
