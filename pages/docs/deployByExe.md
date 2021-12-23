@@ -5,10 +5,8 @@ title: 通过安装包部署 Amiya
 ## 准备好你的 mirai-api-http
 
 ::: warning 声明<br>
-自`4.0`起，本项目将不再对 mirai 的部署作相关说明
-
+自`4.0`起，本项目将不再对 mirai 的部署作相关说明<br>
 相关内容请查阅 mirai 官方文档。
-
 :::
 
 若 [mirai-api-http](https://github.com/project-mirai/mirai-api-http) 尚未成功部署，Amiya 程序将无法正常运行

@@ -137,9 +137,6 @@ Amiya 支持使用别名进行功能使用，**但首先，你需要正确的设
 
 [Github](https://github.com/AmiyaBot/Amiya-Bot)
 
-[项目官网](https://www.amiya.cn)
-
-
 ## 帮助
 
 ::: warning <br>
