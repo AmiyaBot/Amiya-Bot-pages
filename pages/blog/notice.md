@@ -22,7 +22,7 @@ title: Amiya的测试工房
 
 ### Amiya 有什么功能？
 
-请阅读 [《功能指引》](/docs/function/)
+请阅读 [《功能指引》](/blog/function/)
 
 ### Amiya 需要付费吗？
 
