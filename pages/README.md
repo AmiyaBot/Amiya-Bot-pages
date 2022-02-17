@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /logo.png
+heroImage: https://cos.amiyabot.com/resource/logo.png
 actionText: 马上体验
 actionLink: /docs/
 features:

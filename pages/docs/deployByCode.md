@@ -2,9 +2,30 @@
 title: 通过代码部署 Amiya
 ---
 
+## 准备好你的 mirai-api-http
+
 ::: tip <br>
-简单三步，启动你的 Amiya
+若你能自行部署 mirai-console 以及 mirai-api-http，可以跳过本节
 :::
+
+[mirai-api-http](https://github.com/project-mirai/mirai-api-http) 是运行 AmiyaBot 的基础，它是 mirai-console 的一个插件。<br>
+若你从未了解过 mirai 生态，或者你对编程并不熟悉。短时间内可能难以理解其运作方式。<br>
+AmiyaBot 项目提供了简便的部署方法 **mirai-console-setup**，这是 AmiyaBot 为了你能更好地体验本项目而提供的使用方法。本质是 mirai-console-loader
+的绿色启动包，不承担使用过程中产生的一切问题，请勿在本项目的任何相关反馈处提出疑问，最终解释权归 [mirai-console-loader](https://github.com/iTXTech/mirai-console-loader)
+所有。
+
+- [下载 mirai-console-setup](https://cos.amiyabot.com/tools/mirai-console-setup.zip)
+- 解压至任意目录，运行 `start.bat` 初始化
+    - 当日志输出 `mirai-console started successfully.` 时即成功初始化。请关闭控制台接着操作。
+- 根据文件内的提示修改 `config/Console/AutoLogin.yml` 以下两处
+
+```yaml
+account: 你的机器人QQ号
+password:
+    value: 密码
+```
+
+- 再次运行 `start.bat`
 
 ## 开始部署
 
@@ -14,67 +35,44 @@ title: 通过代码部署 Amiya
 pip install -r requirements.txt
 ```
 
-### 配置`config.yaml`
+### 首次运行 `amiya.py` 初始化
 
-```yaml
-# 账号设置
-account:
-    # bot 账号
-    bot: 1515361402
-    # 管理员账号
-    admin: 826197021
-    # 主群设置
-    group:
-        # 主群群号
-        groupId: 362165038
-        # 封闭测试开关
-        closeBeta: false
-
-# mirai-api-http 配置
-miraiApi:
-    # IP 地址
-    host: 127.0.0.1
-    # 端口
-    port:
-        # http 服务端口
-        http: 8080
-        # websocket 服务端口
-        ws: 8060
-    # authkey
-    authKey: AmiyaBot
-    # mirai-console 的根目录路径，可为空，用于通过 path 参数发送静态文件。不配置的情况下，默认通过上传的方式发送
-    folder:
-
-# Amiya-Bot console IP 和端口配置
-console:
-    host: 0.0.0.0
-    port: 80
-
-# 百度智能云配置
-baiduCloud:
-    enable: false
-    appId:
-    apiKey:
-    secretKey:
-
-# 消息设置
-message:
-    # 消息限制
-    limit:
-        seconds: 10
-        maxCount: 3
-    # 文字自动转化为图片的长度
-    transToImageLength: 100
-
-# 常规设置
-setting:
-    # 离线模式
-    offline: false
+```bash
+python amiya.py
 ```
 
-### 启动 Amiya 入口程序
-    - 在你的 Python 环境内运行主程序文件 `amiya.py` 即可启动 Amiya
-    - 若你尚未部署 mirai 套件，也可运行测试程序 `quickTest.py` 进行预部署
+初始化会下载资源并生成配置文件 config/config.yaml
+
+### 配置 `config.yaml`
+
+config.yaml 在初始化时已经生成了部分常规配置，若你的 mah 配置与其无差，可不用修改<br>
+只需要配置 `管理员QQ号` 和 `机器人QQ号` 即可
+
+```yaml
+admin:
+    accounts: [ <管理员QQ号> ]
+baiduCloud:
+    apiKey:
+    appId:
+    enable: false
+    secretKey:
+httpServer:
+    host: 127.0.0.1
+    https: false
+    port: 5000
+miraiApiHttp:
+    account: <机器人QQ号>
+    authKey: AmiyaBot
+    host: 127.0.0.1
+    port:
+        http: 8080
+        ws: 8060
+test:
+    enable: false
+    group: [ ]
+```
+
+### 再次运行 `amiya.py` 启动
 
 ```bash
 python amiya.py
@@ -82,41 +80,15 @@ python amiya.py
 
 ## 功能测试方式
 
-- 离线测试
-    - 离线测试不需要启动 mirai 套件
-    - 配置 `offline: true` 后直接运行脚本 `quickTest.py`
-    - 可在脚本内选择测试方式。注意，测试方式只能使用一种
-
-```python
-if __name__ == '__main__':
-    s = QuickTest()
-
-    # console 测试
-    # s.bot.console.start()
-
-    # 对话式测试
-    s.start()
-
-    # 快速测试单句指令
-    # s.unit_test('兔兔功能')
-```
-
-```bash
-python quickTest.py
-```
-
-- 实际环境的封闭测试
-    - 实际环境属于正式部署 Amiya
+- 5.0 版本暂不支持离线测试
+- 封闭测试
     - 配置封闭测试相关项后启动 Amiya，之后，Amiya 仅会回应封闭测试指定的群
 
 ```yaml
-account:
+test:
+    enable: true
     group:
-        # 封闭测试群号
-        groupId: 362165038
-        # 封闭测试：开
-        closeBeta: true
-setting:
-    # 离线模式：开
-    offline: true
+        - <测试群号1>
+        - <测试群号2>
+        - ...
 ```

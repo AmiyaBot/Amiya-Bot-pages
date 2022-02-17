@@ -9,7 +9,7 @@ export default {
     name: "logo",
     data() {
         return {
-            url: '/logo.png'
+            url: 'https://cos.amiyabot.com/resource/logo.png'
         }
     }
 }

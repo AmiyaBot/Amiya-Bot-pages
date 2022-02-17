@@ -29,7 +29,7 @@ module.exports = {
         nav,
         sidebar,
 
-        logo: '/logo.png',
+        logo: 'https://cos.amiyabot.com/resource/logo.png',
         bgImage: '/bg.svg',
 
         lastUpdated: '上次更新',
