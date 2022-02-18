@@ -11,7 +11,7 @@ export default {
     name: "downloadPack",
     methods: {
         download: function () {
-            axios.get(`${cos}/version.txt`).then(response => {
+            axios.get(`${cos}/version5.txt`).then(response => {
                 window.open(`${cos}/AmiyaBot-${response.data}.zip`)
             })
         }
