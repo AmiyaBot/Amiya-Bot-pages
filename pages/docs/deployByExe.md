@@ -1,12 +1,12 @@
 ---
-title: 通过安装包部署 Amiya
+title: 通过可执行文件部署 Amiya
 ---
 
 ## 准备好你的 mirai-api-http
 
 参阅 [代码部署第一步](/docs/deployByCode.html#准备好你的-mirai-api-http)
 
-## 下载安装包
+## 下载可执行文件
 
 - <downloadPack />，解压到本地任意目录
 - 运行 AmiyaBot.exe 初始化，结束后关闭程序

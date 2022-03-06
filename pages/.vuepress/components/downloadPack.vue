@@ -1,5 +1,5 @@
 <template>
-    <a @click="download">点击下载最新安装包</a>
+    <a @click="download">点击下载最新可执行文件</a>
 </template>
 
 <script>

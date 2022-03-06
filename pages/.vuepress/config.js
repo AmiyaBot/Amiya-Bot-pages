@@ -1,5 +1,6 @@
 const {nav, sidebar} = require('../nav')
 const {themeConfig, blogConfig} = require('./reco')
+const desc = require('./desc')
 
 module.exports = {
     title: 'Amiya-Bot',
