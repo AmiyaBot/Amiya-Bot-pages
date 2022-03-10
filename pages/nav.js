@@ -20,8 +20,10 @@ const nav = [
     {text: '查看源码', link: 'https://github.com/AmiyaBot/Amiya-Bot', icon: 'reco-github'}
 ]
 const sidebar = 'auto'
+const displayAllHeaders = true
 
 module.exports = {
     nav,
-    sidebar
+    sidebar,
+    displayAllHeaders
 }

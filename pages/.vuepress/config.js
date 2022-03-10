@@ -1,4 +1,4 @@
-const {nav, sidebar} = require('../nav')
+const {nav, sidebar, displayAllHeaders} = require('../nav')
 const {themeConfig, blogConfig} = require('./reco')
 const desc = require('./desc')
 
@@ -29,6 +29,7 @@ module.exports = {
     themeConfig: {
         nav,
         sidebar,
+        displayAllHeaders,
 
         logo: 'https://cos.amiyabot.com/resource/logo.png',
         bgImage: '/bg.svg',
