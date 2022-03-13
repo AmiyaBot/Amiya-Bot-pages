@@ -5,7 +5,7 @@ title: 开发文档
 ## 前言
 
 AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发人员无需顾虑通讯和消息的互相转换，从而更专注于业务逻辑的开发。<br>
-在开始之前，你应该先完成 [代码部署](/docs/deployByCode) 以便继续操作
+在开始之前，你应该先完成 [代码部署](/docs/deployByCode) 以便继续操作。
 
     一切就绪的话，无需多言，马上开始。
 
@@ -45,6 +45,8 @@ AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发
 - `config`：配置文件目录
 
 ## 文档索引
+
+我们推荐你按顺序阅读文档，这有助于你更好理解这些代码的运作方式。
 
 - [功能函数的注册](/docs/develop/funcsRegister)
 - [接收消息：Message 对象](/docs/develop/messageObject)

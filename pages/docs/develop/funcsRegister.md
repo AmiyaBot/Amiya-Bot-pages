@@ -26,7 +26,7 @@ AmiyaBot 功能开发的关键模块一共有三个，分别是 `core` 模块下
 
 随后，在 `__init__.py` 内，添加刚刚新建的 `hello` 模块。
 
-```python
+```python {3}
 from . import (
     ...
     hello
@@ -37,7 +37,8 @@ from . import (
 
 #### 示例一
 
-当对话内容带有 `你好` 关键字时，回复 `你好，世界`
+当对话内容带有 `你好` 关键字时，回复 `你好，世界`<br>
+在刚刚新建的 `hello.py` 内，编写如下代码。
 
 ```python
 from core import bot, Message, Chain
@@ -84,13 +85,15 @@ async def _(data):
 
 #### 参数列表
 
-| 参数名          | 释义                                 |
-|--------------|------------------------------------|
-| function_id  | 功能ID，不唯一，仅用于记录该功能的使用数量             |
-| keywords     | 触发关键字，支持字符串、正则、全等句（equal）或由它们构成的列表 |
-| verify       | 自定义校验方法，当该参数被赋值时，keywords 将会失效     |
-| check_prefix | 是否校验前缀或指定需要校验的前缀                   |
-| level        | 关键字校验成功后函数的候选默认等级                  |
+| 参数名          | 类型          | 释义                                 | 默认值  |
+|--------------|-------------|------------------------------------|------|
+| function_id  | String      | 功能ID，不唯一，仅用于记录该功能的使用数量             ||
+| keywords     | KEYWORDS    | 触发关键字，支持字符串、正则、全等句（equal）或由它们构成的列表 ||
+| verify       | VERIFY_CORO | 自定义校验方法，当该参数被赋值时，keywords 将会失效     ||
+| check_prefix | PREFIX      | 是否校验前缀或指定需要校验的前缀                   | True |
+| level        | Int         | 关键字校验成功后函数的候选默认等级                  | 0    |
+
+`check_prefix` 在私聊函数（`on_private_message`）内默认值为 `False`
 
 ## 接收不包含前缀或指定前缀的消息
 
