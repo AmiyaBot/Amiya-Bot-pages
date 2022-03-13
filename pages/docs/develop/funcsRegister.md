@@ -7,10 +7,33 @@ title: 功能函数注册
 AmiyaBot 功能开发的关键模块一共有三个，分别是 `core` 模块下的 `bot`、`Message`、`Chain`。<br>
 
 - `bot` 为主要入口，包含了消息和事件的注册器，以及一些注册工具函数。
-- `Message` 为接收的消息主体，内含预解析的消息内容，以及一些相关操作函数。Message 类在此仅用于装饰器，供编辑器智能提示使用，任何时候，你都不需要实例化 Message 类。
+- `Message` 为接收的消息主体，内含预解析的消息内容，以及一些相关操作函数。Message 对象在此仅用于参数类型注解，供编辑器智能提示使用，任何时候，你都不需要实例化 Message 对象。
 - `Chain` 为 Mirai 消息链的创建工具。所有需要发送的消息，都必须由 Chain 类创建。核心会调用 Chain 类的 build 方法生成 Mirai 消息链。
 
-了解了以上内容，下面让我们注册一个简单的群聊功能。
+编写功能函数的文件，统一创建在 `function` 目录内，目录层级不限。<br>
+了解以上内容，下面让我们注册一个简单的群聊功能。
+
+## 创建功能函数文件
+
+我们在 `function` 目录内创建一个 `hello.py`
+
+``` {4}
+.
+└── functions
+    ├── __init__.py
+    └── hello.py
+```
+
+随后，在 `__init__.py` 内，添加刚刚新建的 `hello` 模块。
+
+```python
+from . import (
+    ...
+    hello
+)
+```
+
+## 注册一个功能
 
 #### 示例一
 
@@ -163,7 +186,7 @@ async def _(data: Message):
 from core import bot, Message, Chain
 
 
-# 如果不指定优先级，当对话内容为 "世界你好" 时，第一个函数会优先通过校验并输出。
+# 如果不指定优先级，当对话内容为 "世界你好" 时，第一个函数会首先通过校验并输出。
 # 因为在模块加载阶段，第一个函数更早注册完毕。
 
 @bot.on_group_message(keywords='你好', level=1)
@@ -178,8 +201,7 @@ async def _(data: Message):
 
 ## 自定义检查
 
-> 内置的检查终究存在上限，如果需要制作复杂的功能，自定义检查必不可少。
-
+内置的检查终究存在上限，如果需要制作复杂的功能，自定义检查必不可少。<br>
 自定义检查是一个协程函数，参数为 Message 对象，返回一个布尔值（必选）、优先级（可选）、关键词（可选）的元祖。
 
 ```python
@@ -224,4 +246,6 @@ async def _(data: Message):
     return Chain(data).text('你好，世界')
 ```
 
-现在，你的功能函数已经注册完了。下一节，我们去了解功能函数的参数 [Message 对象](/docs/develop/messageObject)。
+## 结语
+
+现在，你已经知道功能的各种基本的注册方式了。下一节，我们去了解功能函数的参数 [Message](/docs/develop/messageObject) 对象。
