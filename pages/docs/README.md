@@ -11,12 +11,22 @@ isShowComments: false
 ## 想在自己的群里加入一个 Amiya ？
 
 Amiya 为开源项目，你可以寻找所有部署了 Amiya 的作者向他请求 Amiya 加入你的群<br>
-想寻找官方的 Amiya Demo 可以加入 [Amiya的测试工房](/blog/notice/) 咨询
+想寻找官方的 Amiya Demo 可以加入 [Amiya的测试工房](/blog/notice) 咨询
 
 ## 想创建属于自己的 Amiya ？
 
-- 首要事项，想创建自己的 Amiya，本项目要求你能够熟悉使用 [mirai-console](https://github.com/mamoe/mirai-console)
+- 想创建自己的 Amiya，本项目希望你能够熟悉使用 [mirai-console](https://github.com/mamoe/mirai-console)
   以及其插件 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)
-- 若你不是开发者或你不需要对 Amiya 进行二次开发，可以直接 [通过可执行文件部署 Amiya](/docs/deployByExe/)
-- 若你需要 [通过代码部署](/docs/deployByCode/)，建议先了解 mirai-api-http 以便理解源码
-- 开发或代码部署需要准备 Python 3.7 ~ 3.8 环境
+- 若你不是开发者或你不需要对 Amiya 进行二次开发，可以直接 [通过可执行文件部署 Amiya](/docs/deployByExe)
+- 若你需要 [通过代码部署](/docs/deployByCode)，建议先了解 mirai-api-http 以便理解源码
+- 部署代码需要准备 `Python 3.7 ~ 3.8` 环境
+
+## 开发文档
+
+如果你想对 Amiya 进行二次开发，我们推荐你按顺序阅读开发文档，这有助于你更好地理解运作方式。<br>
+Amiya 的框架设计旨在让开发者更专注于业务逻辑。阅读完文档，你即可得心应手。
+
+- [文档首页](/docs/develop)
+- [功能函数的注册](/docs/develop/funcsRegister)
+- [接收消息：Message 对象](/docs/develop/messageObject)
+- [发送消息：Chain 对象](/docs/develop/chainObject)

@@ -9,6 +9,14 @@ AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发
 
     一切就绪的话，无需多言，马上开始。
 
+## 文档索引
+
+- 基础开发文档
+    - [功能函数的注册](/docs/develop/funcsRegister)
+    - [接收消息：Message 对象](/docs/develop/messageObject)
+    - [发送消息：Chain 对象](/docs/develop/chainObject)
+- 工具函数
+
 ## 主要目录结构
 
 以下是主要的目录和文件，对于功能开发来说，你无需关心更深的实现。**专注于业务逻辑**是 AmiyaBot 的主旨。
@@ -43,11 +51,3 @@ AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发
 - `core/network`：网络调用模块
 - `core/database`：数据库调用模块
 - `config`：配置文件目录
-
-## 文档索引
-
-我们推荐你按顺序阅读文档，这有助于你更好理解这些代码的运作方式。
-
-- [功能函数的注册](/docs/develop/funcsRegister)
-- [接收消息：Message 对象](/docs/develop/messageObject)
-- [发送消息：Chain 对象](/docs/develop/chainObject)

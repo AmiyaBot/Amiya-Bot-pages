@@ -42,7 +42,7 @@ title: Message对象
 |----------|---------------|-------------------------------------|
 | result   | Bool          | 校验结果                                |
 | keywords | List\[String] | 校验成功匹配出来的关键字列表                      |
-| weight   | \[Int, Float] | 权重（优先级），用于当同时存在多个检验结果时，可根据权值匹配优先的结果 |
+| weight   | Int, Float    | 权重（优先级），用于当同时存在多个检验结果时，可根据权值匹配优先的结果 |
 
 `User` 对象是数据库 `user` 表的 ORM 对象，其属性如下。
 
@@ -88,7 +88,7 @@ async def _(data: Message):
 
 回复将会呈现下图的效果：
 
-<img style="width: 400px" :src="$withBase('/doc_images/hello_world_3.png')" alt="hello_world_1">
+<img style="width: 400px" :src="$withBase('/doc_images/hello_world_3.png')" alt="hello_world_3">
 
 ## Message.waiting
 
@@ -117,7 +117,7 @@ async def _(data: Message):
         return Chain(data).text('你好，博士')
 ```
 
-<img style="width: 400px" :src="$withBase('/doc_images/hello_world_4.png')" alt="hello_world_1">
+<img style="width: 400px" :src="$withBase('/doc_images/hello_world_4.png')" alt="hello_world_4">
 
 ### force 强制等待
 
