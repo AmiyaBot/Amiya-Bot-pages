@@ -9,7 +9,7 @@ const nav = [
                     {text: 'Message对象', link: '/docs/develop/messageObject'},
                     {text: 'Chain对象', link: '/docs/develop/chainObject'},
                     {text: '注册事件响应', link: '/docs/develop/eventsRegister'},
-                    {text: '注册定时事件', link: '/docs/develop/tasksRegister'},
+                    {text: '注册定时任务', link: '/docs/develop/tasksRegister'},
                 ]
             },
             {
