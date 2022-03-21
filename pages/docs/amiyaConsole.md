@@ -1,6 +1,8 @@
 ---
-title: 使用 Amiya-Bot-console
+title: 使用后台管理系统
 ---
+
+后台管理系统，即 [Amiya-Bot console](https://github.com/AmiyaBot/Amiya-Bot-console)
 
 ::: tip <br>
 Amiya-Bot console 会在启动时自动下载并按照配置在本地部署，可直接通过浏览器访问

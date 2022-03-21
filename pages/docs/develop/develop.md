@@ -13,9 +13,11 @@ AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发
 
 - 基础开发文档
     - [功能函数的注册](/docs/develop/funcsRegister)
-    - [接收消息：Message 对象](/docs/develop/messageObject)
-    - [发送消息：Chain 对象](/docs/develop/chainObject)
-- 工具函数
+    - [接收消息：Message对象](/docs/develop/messageObject)
+    - [发送消息：Chain对象](/docs/develop/chainObject)
+    - [注册事件响应](/docs/develop/eventsRegister)
+    - [注册定时事件](/docs/develop/tasksRegister)
+- 工具函数文档
 
 ## 主要目录结构
 

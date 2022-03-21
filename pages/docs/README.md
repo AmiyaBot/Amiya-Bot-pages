@@ -23,10 +23,6 @@ Amiya 为开源项目，你可以寻找所有部署了 Amiya 的作者向他请�
 
 ## 开发文档
 
-如果你想对 Amiya 进行二次开发，我们推荐你按顺序阅读开发文档，这有助于你更好地理解运作方式。<br>
-Amiya 的框架设计旨在让开发者更专注于业务逻辑。阅读完文档，你即可得心应手。
+如果你想对 Amiya 进行二次开发，我们推荐你按顺序阅读开发文档，这有助于你更好地理解运作方式。
 
 - [文档首页](/docs/develop)
-- [功能函数的注册](/docs/develop/funcsRegister)
-- [接收消息：Message 对象](/docs/develop/messageObject)
-- [发送消息：Chain 对象](/docs/develop/chainObject)

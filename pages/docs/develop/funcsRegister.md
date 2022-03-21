@@ -225,7 +225,7 @@ async def my_verify(data: Message):
     return False
 ```
 
-输出关键词将对 Verify 对象产生影响，Verify 对象我们会在后续详细说明。
+输出关键词可将其赋值到 Verify 对象的 keywords 属性内，Verify 对象我们会在后续详细说明。
 
 ```python
 async def my_verify(data: Message):

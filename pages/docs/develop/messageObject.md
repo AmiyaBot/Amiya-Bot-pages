@@ -35,15 +35,7 @@ title: Message对象
 | verify          | String        | Verify 对象                 |
 | user            | String        | User 对象                   |
 
-`Verify` 对象是对这则消息的校验结果，请放心，你能在功能函数内使用到这个属性，那表明校验结果一定为真。<br>
-所以通常情况下，只有 `keywords` 属性能作用与功能函数。
-
-| 属性       | 类型            | 释义                                  |
-|----------|---------------|-------------------------------------|
-| result   | Bool          | 校验结果                                |
-| keywords | List\[String] | 校验成功匹配出来的关键字列表                      |
-| weight   | Int, Float    | 权重（优先级），用于当同时存在多个检验结果时，可根据权值匹配优先的结果 |
-
+`Verify` 对象在本文档结尾说明。<br>
 `User` 对象是数据库 `user` 表的 ORM 对象，其属性如下。
 
 | 属性          | 类型     | 释义                 |
@@ -133,6 +125,48 @@ async def _(data: Message):
 - 若用户超过指定时间未回复，waiting 会返回 `None`
 - 同一个用户（目标）只能存在一个等待，当一个新的等待创建后，上一个未使用的等待会被注销并引发 `WaitEventCancel` 异常，进行中的业务将会被**终止**，通常这个异常会被全局异常捕捉器过滤。
 - 在等待时间内使用其他功能，等待也会被注销。
+
+## Verify 对象
+
+Verify 对象是消息分配器校验功能可行性后产生的校验结果。储存在 Message 对象内为功能函数提供帮助。
+
+**对象属性**
+
+| 属性       | 类型            | 释义                                  |
+|----------|---------------|-------------------------------------|
+| result   | Bool          | 校验结果                                |
+| keywords | List\[String] | 校验成功匹配出来的关键字列表                      |
+| weight   | Int, Float    | 权重（优先级），用于当同时存在多个检验结果时，可根据权值匹配优先的结果 |
+
+虽然 Message 对象作用于校验函数和功能函数，但 Verify 仅在功能函数内可以调用。
+
+```python {5,10}
+from core import bot, Message, Chain
+
+
+async def my_verify(data: Message):
+    data.verify // 此时 verify 属性为 None
+
+
+@bot.on_group_message(verify=my_verify)
+async def _(data: Message):
+    data.verify // 此时 verify 属性为 Verify 的实例
+```
+
+Verify 对象的 `result` 与 `weight` 属性是供消息分配器使用的。一般情况下只有 `keywords` 属性能产生作用。<br>
+`keywords` 属性是消息分配器检验完毕后，将校验成功的关键内容，储存在该属性内。
+
+```python
+@bot.on_group_message(keywords=[...])
+async def _(data: Message):
+    data.verify.keywords // 当触发关键字存在很多个时，此处的结果就是触发函数时选中的那一个
+```
+
+```python
+@bot.on_group_message(verify=my_verify)
+async def _(data: Message):
+    data.verify.keywords // 此处的结果是 my_verify 校验函数返回的元祖的第三个值
+```
 
 ## 结语
 
