@@ -1,5 +1,6 @@
 ---
 title: Chain对象
+isShowComments: false
 ---
 
 ## 简介

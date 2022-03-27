@@ -1,5 +1,6 @@
 ---
 title: 功能函数注册
+isShowComments: false
 ---
 
 ## 简单说明

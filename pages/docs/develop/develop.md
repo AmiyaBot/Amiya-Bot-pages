@@ -1,5 +1,6 @@
 ---
 title: 开发文档
+isShowComments: false
 ---
 
 ## 前言
@@ -53,3 +54,7 @@ AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发
 - `core/network`：网络调用模块
 - `core/database`：数据库调用模块
 - `config`：配置文件目录
+
+## 系统设计图
+
+<img style="width: 100%" :src="$withBase('/AmiyaBotSystem.png')" alt="hello_world_3">

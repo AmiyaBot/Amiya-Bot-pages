@@ -1,6 +1,10 @@
 ---
-title: 通过可执行文件部署 Amiya
+title: 在 Windows 下通过可执行文件部署 Amiya
 ---
+
+::: warning <br>
+可执行文件部署暂不支持 Linux 以及 MacOS 系统，请使用 [代码部署](/docs/deployByCode)。
+:::
 
 ## 准备好你的 mirai-api-http
 

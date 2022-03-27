@@ -1,8 +1,8 @@
 ---
-title: 如何维护
+title: 日常维护
 ---
 
-### 日常维护
+### 维护数据
 
 ::: tip <br>
 推荐使用 [Amiya-Bot-console](https://github.com/AmiyaBot/Amiya-Bot-console) 获得更好的可视化维护界面，否则部分数据维护需要手动编辑数据库<br>

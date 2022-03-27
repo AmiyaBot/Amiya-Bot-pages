@@ -3,6 +3,12 @@ const nav = [
     {
         text: '文档', items: [
             {
+                text: '部署文档', items: [
+                    {text: '通过代码部署', link: '/docs/deployByCode'},
+                    {text: '通过可执行文件部署', link: '/docs/deployByExe'},
+                ]
+            },
+            {
                 text: '开发文档', items: [
                     {text: '首页', link: '/docs/develop/develop'},
                     {text: '功能函数的注册', link: '/docs/develop/funcsRegister'},
@@ -13,14 +19,8 @@ const nav = [
                 ]
             },
             {
-                text: '部署文档', items: [
-                    {text: '通过代码部署', link: '/docs/deployByCode'},
-                    {text: '通过可执行文件部署', link: '/docs/deployByExe'},
-                ]
-            },
-            {
                 text: '维护文档', items: [
-                    {text: '如何维护', link: '/docs/maintain'},
+                    {text: '日常维护', link: '/docs/maintain'},
                     {text: '使用后台管理系统', link: '/docs/amiyaConsole'},
                 ]
             }

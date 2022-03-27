@@ -1,5 +1,6 @@
 ---
 title: 注册事件响应
+isShowComments: false
 ---
 
 ## 简单说明

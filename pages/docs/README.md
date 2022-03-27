@@ -19,10 +19,9 @@ Amiya 为开源项目，你可以寻找所有部署了 Amiya 的作者向他请�
   以及其插件 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)
 - 若你不是开发者或你不需要对 Amiya 进行二次开发，可以直接 [通过可执行文件部署 Amiya](/docs/deployByExe)
 - 若你需要 [通过代码部署](/docs/deployByCode)，建议先了解 mirai-api-http 以便理解源码
-- 部署代码需要准备 `Python 3.7 ~ 3.8` 环境
 
 ## 开发文档
 
 如果你想对 Amiya 进行二次开发，我们推荐你按顺序阅读开发文档，这有助于你更好地理解运作方式。
 
-- [文档首页](/docs/develop)
+- [文档首页](/docs/develop/develop)

@@ -25,9 +25,41 @@ password:
     value: 密码
 ```
 
+- 检查 mirai-api-http 的配置 `config/net.mamoe.mirai-api-http/setting.yml`，如果你是使用 mirai-console-setup，可以忽略这一步。
+
+```yaml {6,11,12,15,16}
+adapters:
+    - http
+    - ws
+debug: false
+enableVerify: true
+verifyKey: AmiyaBot
+singleMode: false
+cacheSize: 4096
+adapterSettings:
+    http:
+        host: 0.0.0.0
+        port: 8080
+        cors: [ * ]
+    ws:
+        host: 0.0.0.0
+        port: 8060
+        reservedSyncId: -1
+```
+
 - 再次运行 `start.bat`
 
+## 克隆仓库
+
+```bash
+git clone https://github.com/AmiyaBot/Amiya-Bot.git
+```
+
 ## 开始部署
+
+::: danger 注意<br>
+运行环境为 `Python 3.7 ~ 3.8`
+:::
 
 ### 安装 python 依赖
 
@@ -48,7 +80,7 @@ python amiya.py
 config.yaml 在初始化时已经生成了部分常规配置，若你的 mah 配置与其无差，可不用修改<br>
 只需要配置 `管理员QQ号` 和 `机器人QQ号` 即可
 
-```yaml
+```yaml {2,13,14}
 admin:
     accounts: [ <管理员QQ号> ]
 baiduCloud:

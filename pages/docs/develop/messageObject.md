@@ -1,5 +1,6 @@
 ---
 title: Message对象
+isShowComments: false
 ---
 
 ## 简介
@@ -31,9 +32,9 @@ title: Message对象
 | group_id        | Int           | 用户群号                      |
 | nickname        | String        | 用户昵称                      |
 | raw_chain       | String        | 原始消息链                     |
-| time            | String        | 消息时间                      |
-| verify          | String        | Verify 对象                 |
-| user            | String        | User 对象                   |
+| time            | Int           | 消息时间                      |
+| verify          | Verify        | Verify 对象                 |
+| user            | UserBaseModel | User 对象                   |
 
 `Verify` 对象在本文档结尾说明。<br>
 `User` 对象是数据库 `user` 表的 ORM 对象，其属性如下。
@@ -54,7 +55,7 @@ title: Message对象
 
 ## Message.send
 
-在上一节里，发送消息通常是使用返回 `Chain` 对象的方式。如果一个功能需要发送多条消息。则需要使用 `Message.send` 方法。<br>
+在上一节里，发送消息通常是在函数内返回 `Chain` 对象。使用 `Message.send` 方法可以在函数业务逻辑中发送消息。<br>
 
 ::: warning 什么是 Chain 对象？<br>
 这个疑问，你可能已经在上一节就已经产生了。<br>
