@@ -57,4 +57,4 @@ AmiyaBot 的核心是由 Python 编写的自主研发的框架，旨在让开发
 
 ## 系统设计图
 
-<img style="width: 100%" :src="$withBase('/AmiyaBotSystem.png')" alt="hello_world_3">
+<img style="width: 100%" :src="$withBase('/AmiyaBotDesign.svg')" alt="AmiyaBotDesign">
