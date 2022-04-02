@@ -1,5 +1,6 @@
 ---
 title: 通过代码部署 Amiya
+isShowComments: false
 ---
 
 ## 准备好你的 mirai-api-http

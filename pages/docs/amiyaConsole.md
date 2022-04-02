@@ -1,5 +1,6 @@
 ---
 title: 使用后台管理系统
+isShowComments: false
 ---
 
 后台管理系统，即 [Amiya-Bot console](https://github.com/AmiyaBot/Amiya-Bot-console)

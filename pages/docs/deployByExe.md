@@ -1,5 +1,6 @@
 ---
 title: 在 Windows 下通过可执行文件部署 Amiya
+isShowComments: false
 ---
 
 ::: warning <br>

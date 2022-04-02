@@ -1,5 +1,6 @@
 ---
 title: 日常维护
+isShowComments: false
 ---
 
 ## 维护数据

@@ -6,6 +6,7 @@ const nav = [
                 text: '部署文档', items: [
                     {text: '通过代码部署', link: '/docs/deployByCode'},
                     {text: '通过可执行文件部署', link: '/docs/deployByExe'},
+                    {text: 'MySQL支持', link: '/docs/mysqlSupport'},
                 ]
             },
             {
