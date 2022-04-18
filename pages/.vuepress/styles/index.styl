@@ -1,38 +1,44 @@
 @font-face {
-    font-family: 'Harmony';
-    font-weight: normal;
-    font-style: normal;
-    src: url('https://cos.amiyabot.com/resource/HarmonyOS_Sans_SC.ttf');
+    font-family 'Harmony'
+    font-weight normal
+    font-style normal
+    src url('https://cos.amiyabot.com/resource/HarmonyOS_Sans_SC.ttf')
 }
 
 * {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, 'Harmony' !important;
+    font-family source-code-pro, Menlo, Monaco, Consolas, Courier New, 'Harmony' !important
 }
 
 
 .home:before {
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    position fixed;
-    top: 0;
-    left: 0;
-    background: url(/bg.svg) center / cover no-repeat;
+    content ''
+    width 100vw
+    height 100vh
+    position fixed
+    top 0
+    left 0
+    background url(/bg.svg) center / cover no-repeat
 }
 
 .home > .hero > img {
-    margin-top: 40px !important;
+    margin-top 40px !important
 }
 
 .title > br:last-child {
-    display: none;
+    display none
 }
 
 .dropdown-wrapper .nav-dropdown .dropdown-item h4 {
-    font-weight: bold !important;
-    margin-bottom: 10px !important;
+    font-weight bold !important
+    margin-bottom 10px !important
 }
 
 .dropdown-wrapper .dropdown-title .arrow {
-    margin-left: 0 !important;
+    margin-left 0 !important
+}
+
+.footer-wrapper {
+    position relative
+    z-index 10000
+    background-color #fff
 }

@@ -1,10 +1,9 @@
 const {nav, sidebar, displayAllHeaders} = require('../nav')
 const {themeConfig, blogConfig} = require('./reco')
-const desc = require('./desc')
 
 module.exports = {
     title: 'Amiya-Bot',
-    description: '功能强大，简单易用的《明日方舟》机器人',
+    description: '高效，易用的《明日方舟》机器人',
     head: [
         [
             'meta',

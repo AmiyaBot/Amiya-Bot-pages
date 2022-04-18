@@ -18,19 +18,15 @@ const nav = [
                     {text: '注册事件响应', link: '/docs/develop/eventsRegister'},
                     {text: '注册定时任务', link: '/docs/develop/tasksRegister'},
                 ]
-            },
-            {
-                text: '维护文档', items: [
-                    {text: '日常维护', link: '/docs/maintain'},
-                    {text: '使用后台管理系统', link: '/docs/amiyaConsole'},
-                ]
             }
         ]
     },
     {
         text: '说明', items: [
             {text: '功能指引', link: '/blog/function'},
-            {text: 'Amiya的测试工房', link: '/blog/notice'},
+            {text: '日常维护', link: '/docs/maintain'},
+            {text: '使用后台管理系统', link: '/docs/amiyaConsole'},
+            {text: '加入Amiya的测试工房', link: '/blog/notice'},
         ]
     },
     {text: '时间线', link: '/timeline/'},
