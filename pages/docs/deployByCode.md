@@ -81,9 +81,9 @@ python amiya.py
 config.yaml 在初始化时已经生成了部分常规配置，若你的 mah 配置与其无差，可不用修改<br>
 只需要配置 `管理员QQ号` 和 `机器人QQ号` 即可
 
-```yaml {2,13,14}
+```yaml {2,13}
 admin:
-    accounts: [ <管理员QQ号> ]
+    accounts: [ 管理员QQ号 ]
 baiduCloud:
     apiKey:
     appId:
@@ -94,7 +94,7 @@ httpServer:
     https: false
     port: 5000
 miraiApiHttp:
-    account: <机器人QQ号>
+    account: 机器人QQ号
     authKey: AmiyaBot
     host: 127.0.0.1
     port:
