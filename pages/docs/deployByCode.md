@@ -3,6 +3,15 @@ title: 通过代码部署 Amiya
 isShowComments: false
 ---
 
+::: danger <span style="font-size: 20px">环境以及操作系统支持</span> <br>
+
+- 仅支持 <span style="color: red">Windows 7</span> 以上系统
+- 仅支持 <span style="color: red">MacOS 10.14 Mojave</span> 以上系统
+- Linux 系统仅支持 <span style="color: red">Ubuntu 18.04</span> 以及 <span style="color: red">Ubuntu 20.04</span>
+
+运行环境仅支持 `Python 3.7 ~ 3.8`
+:::
+
 ## 准备好你的 mirai-api-http
 
 ::: tip <br>
@@ -54,18 +63,33 @@ adapterSettings:
 
 ```bash
 git clone https://github.com/AmiyaBot/Amiya-Bot.git
+cd Amiya-Bot/
 ```
 
 ## 开始部署
 
-::: danger 注意<br>
-运行环境为 `Python 3.7 ~ 3.8`
-:::
+### 安装依赖
 
-### 安装 python 依赖
+#### Windows or MacOS
 
 ```bash
 pip install -r requirements.txt
+playwright install chromium
+```
+
+#### Ubuntu
+
+```bash
+pip3 install -r requirements.txt
+playwright install-deps chromium
+```
+
+#### 可选依赖：PaddleOCR
+
+PaddleOCR 是在你**没有配置百度智能云**或**百度智能云无法使用**时的备选 OCR 应用
+
+```bash
+pip install paddleocr
 ```
 
 ### 首次运行 `amiya.py` 初始化
@@ -113,9 +137,23 @@ python amiya.py
 
 ## 功能测试方式
 
-- 5.0 版本暂不支持离线测试
-- 封闭测试
-    - 配置封闭测试相关项后启动 Amiya，之后，Amiya 仅会回应封闭测试指定的群
+### 离线交互式测试
+
+运行测试脚本可启动离线测试，输入对话内容即可调试，功能的返回将会在控制台内输出
+
+```bash
+python amiyaTest.py
+```
+
+在需要调试模板时，可以加入 `debug` 参数取消 chromium 无头模式
+
+```bash
+python amiyaTest.py --debug
+```
+
+### 封闭测试
+
+配置封闭测试相关项后启动 Amiya，之后，Amiya 仅会回应封闭测试指定的群
 
 ```yaml
 test:
