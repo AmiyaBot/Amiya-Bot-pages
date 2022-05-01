@@ -81,7 +81,7 @@ playwright install chromium
 
 ```bash
 pip3 install -r requirements.txt
-playwright install-deps chromium
+playwright install --with-deps chromium
 ```
 
 #### 可选依赖：PaddleOCR
