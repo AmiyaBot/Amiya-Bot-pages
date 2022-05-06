@@ -6,7 +6,7 @@ isShowComments: false
 ## 简介
 
 `Chain` 对象是构建你的消息体的类。任何有关**发送消息**的函数，消息接受的参数类型均为 `Chain`。<br>
-相信在之前的章节里，你已经见过它了。<br>
+相信在之前的章节里，你已经见过它了。Chain 对象提供丰富的消息构建方式，可以让你发送多彩的文字图片，甚至是html模板。<br>
 这是最简单的一条文本消息：
 
     Chain(data).text('你好，世界')
@@ -29,13 +29,14 @@ isShowComments: false
 
 Chain 对象支持链式语法，用于构建复杂的消息结构。以下方法均返回 Chain 对象自身。
 
-| 方法名        | 参数                       | 释义        | 异步  |
-|------------|--------------------------|-----------|-----|
-| at         | user,enter               | 添加 @ 一个用户 | 否   |
-| text       | text,enter,auto_convert  | 添加一段文字    | 否   |
-| text_image | text,images,width,height | 添加一张文字图片  | 否   |
-| image      | target                   | 添加一张图片    | 否   |
-| voice      | target                   | 添加一条语音    | 否   |
+| 方法名        | 参数                                | 释义               | 异步  |
+|------------|-----------------------------------|------------------|-----|
+| at         | user,enter                        | 添加 @ 一个用户        | 否   |
+| text       | text,enter,auto_convert           | 添加一段文字           | 否   |
+| text_image | text,images,width,height          | 添加一张文字图片         | 否   |
+| image      | target                            | 添加一张图片           | 否   |
+| voice      | target                            | 添加一条语音           | 否   |
+| html       | path,data,is_template,render_time | 使用 html 页面生成一张图片 | 否   |
 
 ### **Chain.at**
 
@@ -214,11 +215,128 @@ async def _(data: Message):
 
 <img style="width: 400px" :src="$withBase('/doc_images/hello_world_8.png')" alt="hello_world_8">
 
+### **Chain.html**
+
+使用 html 页面生成一张图片
+
+| 参数名         | 类型         | 释义           | 默认值  |
+|-------------|------------|--------------|------|
+| path        | String     | 模板文件路径或网站URL |      |
+| data        | Dict, List | 模板文件数据       |      |
+| is_template | Bool       | 是否为模板文件      | True |
+| render_time | Int        | 渲染时间（毫秒）     | 200  |
+
+    Chain(data).html('template.html', {...})
+
+#### **创建html模板文件**
+
+html模板文件存放在 `template` 目录下，参数 `path` 默认以该文件夹作为根目录。<br>
+在 `template` 目录内创建一个 `hello.html`
+
+``` {3}
+.
+└── template
+    └── hello.html
+```
+
+编写如下**标准模板**内容
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入字体样式 -->
+    <link type="text/css" rel="styleSheet" href="../font.css"/>
+    <title>template</title>
+</head>
+<body>
+<div id="template">
+
+</div>
+</body>
+<!-- 引入 vue.js -->
+<script src="../vue.min.js"></script>
+<script>
+    const template = new Vue({
+        el: '#template',
+        methods: {
+            init(data) {
+                this.$set(this, 'data', data)
+            }
+        },
+        data() {
+            return {
+                data: {}
+            }
+        },
+        mounted() {
+            // 暴露 init 方法供核心调用
+            window.init = this.init
+        }
+    })
+</script>
+</html>
+```
+
+#### **Vue.js**
+
+模板文件建议使用 [Vue.js](https://cn.vuejs.org/) （以下简称 `vue`） 编写，vue 将有效提高模板渲染速度以及代码可读性，**以下文档将使用 vue 进行讲解，并默认你熟悉使用 vue 开发**。
+
+编写模板，在模板内加入渲染代码
+
+```html
+<!-- hello.html -->
+<div id="template">
+    <div>你好，{{ data.username }}</div>
+</div>
+```
+
+将需要渲染的数据传入模板
+
+```python {9}
+from core import bot, Message, Chain
+
+
+@bot.on_group_message(keywords='你好')
+async def _(data: Message):
+    init_data = {
+        'username': data.nickname
+    }
+    return Chain(data).html('hello.html', init_data)
+```
+
+即可在触发会话时，渲染 `hello.html` 制作图片发送回复。
+
+::: tip 关于 <br>
+html 制图旨在不使用 PIL 也能制作出美观的图片，但不希望你滥用。在仅渲染文字和少量图案时，PIL 的效率会比 html 快得多。
+:::
+
+#### **通过网站URL制图**
+
+支持直接使用网站URL生成图片
+
+::: danger 注意 <br>
+在页面加载完毕后，默认预留200ms的渲染时间。如果页面有部分元素是异步渲染的，将有可能不显示在图片内。可通过参数 `render_time` 设置需要的时间。
+:::
+
+```python {6}
+from core import bot, Message, Chain
+
+
+@bot.on_group_message(keywords='百度')
+async def _(data: Message):
+    return Chain(data).html('https://www.baidu.com/', is_template=False, render_time=1000)
+```
+
 ## 消息链
 
 Chain 对象支持链式语法，你只需要按顺序以链式使用上述方法，即可拼接出内容丰富的消息。
 
-    Chain(data).text(...).image(...).text(...).voice(...)
+    Chain(data).text(...).image(...).text(...).voice(...).html(...)
 
 其中，voice 方法并不参与构建消息体，因为 QQ 无法在发送的文字消息中间镶嵌语音，语音将会单独发送。
 
