@@ -64,6 +64,12 @@ adapterSettings:
 config.yaml 在初始化时已经生成了部分常规配置，若你的 mah 配置与其无差，可不用修改<br>
 只需要配置 `管理员QQ号` 和 `机器人QQ号` 即可
 
+::: danger 请注意 yaml 文件的格式<br>
+yaml 是格式严格的文件，其内容的 `键` 和 `值` 之间必须有且只有一个空格。<br><br>
+<span style="color: red">错误的：account:12345</span><br>
+<span style="color: green">正确的：account: 12345</span>
+:::
+
 ```yaml {2,13}
 admin:
     accounts: [ 管理员QQ号 ]
