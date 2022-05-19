@@ -26,7 +26,7 @@ const nav = [
             {text: '功能指引', link: '/blog/function'},
             {text: '日常维护', link: '/docs/maintain'},
             {text: '使用后台管理系统', link: '/docs/amiyaConsole'},
-            {text: '加入Amiya的测试工房', link: '/blog/notice'},
+            {text: '官方QQ频道', link: '/blog/official'},
         ]
     },
     {text: '时间线', link: '/timeline/'},
