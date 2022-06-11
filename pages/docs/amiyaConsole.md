@@ -29,3 +29,7 @@ httpServer:
 2. 用浏览器打开配置的 url，如果是默认配置，则直接访问 `127.0.0.1:5000`
 3. 登录账号并开始管理你的 Amiya
     - 初始的账号是 config.yaml 里配置的 `admin.accounts`，默认密码为 `admin123`
+   
+::: danger 警告<br>
+如果你的 console 暴露在公网，请及时修改默认密码，否则将存在严重安全风险！
+:::
