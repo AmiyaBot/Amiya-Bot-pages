@@ -166,9 +166,7 @@ Amiya 支持使用词语替换识别干员或物品的别名，**但首先，你
 开发上的问题请前往 [issues](https://github.com/AmiyaBot/Amiya-Bot/issues)
 :::
 
-若对 Amiya 的使用有任何疑问、BUG 反馈、建议或申请 Amiya Demo
-加入自己的群，请前往【Amiya的测试工房】，点击群号加入 [362165038](https://jq.qq.com/?_wv=1027&k=4HKMpUZL)
+~~若对 Amiya 的使用有任何疑问、BUG 反馈、建议或申请 Amiya Demo
+加入自己的群，请前往【Amiya的测试工房】，点击群号加入~~
 
-::: tip <br>
-如果你不是通过 Amiya Demo (1515361402) 发送的链接来到此页面，请联系你使用的 Amiya 的管理员
-:::
+非常抱歉，Amiya Demo 已经停止提供服务，现仅面向开发用户提供有限的技术支持。
