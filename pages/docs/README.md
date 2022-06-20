@@ -11,7 +11,8 @@ isShowComments: false
 ## 想在自己的群里加入一个 Amiya ？
 
 Amiya 为开源项目，你可以寻找所有部署了 Amiya 的作者向他请求 Amiya 加入你的群<br>
-想寻找官方的 Amiya Demo 可以加入 [Amiya的测试工房](/blog/notice) 咨询
+想寻找官方的 Amiya Demo 可以加入 [Amiya的测试工房](/blog/notice) 咨询   
+*QQ 群的官方 Demo 已经停止提供服务，现仅面向开发者提供有限的技术支持。
 
 ## 想创建属于自己的 Amiya ？
 
