@@ -35,7 +35,7 @@ jobs:
 
             -   name: Update CNAME
                 run:
-                    echo 'www.amiyabot.com' > dist/CNAME
+                    echo 'www.amiya.cn' > dist/CNAME
 
             -   name: Deploy
                 uses: crazy-max/ghaction-github-pages@v2.5.0
