@@ -7,9 +7,11 @@ isShowComments: false
 可执行文件部署暂不支持 Linux 以及 MacOS 系统，请使用 [代码部署](/docs/deployByCode)。
 :::
 
+[点击下载整合包](https://pan.baidu.com/s/1vjORyF2WO1c0kF32EfdScA?pwd=8261)
+
 ## 准备好你的 mirai-api-http
 
-::: tip <br>
+::: tip 提示<br>
 若你能自行部署 mirai-console 以及 mirai-api-http，可以跳过本节
 :::
 
@@ -19,8 +21,7 @@ AmiyaBot 项目提供了简便的部署方法 **mirai-console-setup**，这是 A
 的绿色启动包，不承担使用过程中产生的一切问题，请勿在本项目的任何相关反馈处提出疑问，最终解释权归 [mirai-console-loader](https://github.com/iTXTech/mirai-console-loader)
 所有。
 
-- [下载 mirai-console-setup](https://cos.amiyabot.com/tools/mirai-console-setup.zip)
-- 解压至任意目录，运行 `start.bat` 初始化
+- 解压整合包内的`mirai-console-setup.zip`至任意目录，运行 `start.bat` 初始化
     - 当日志输出 `mirai-console started successfully.` 时即成功初始化。请关闭控制台接着操作。
 - 根据文件内的提示修改 `config/Console/AutoLogin.yml` 以下两处
 
@@ -52,11 +53,20 @@ adapterSettings:
         reservedSyncId: -1
 ```
 
-- 再次运行 `start.bat`
+- 再次运行 `start.bat` 并保持运行
 
-## 下载可执行文件
+## 解压可执行文件
 
-- <downloadPack />，解压到本地任意目录
+- 解压整合包内的`AmiyaBot-v5.*.*.zip`至任意目录
+- 解压整合包内的资源文件
+    - 解压 `gamedata.zip` 和 `skins.zip` 里的文件夹到 resource 目录里
+
+```
+├── resource
+│   ├── gamedata
+│   ├── skins
+```
+
 - 运行 AmiyaBot.exe 初始化，结束后关闭程序
 
 ### 配置 `config.yaml`
@@ -96,7 +106,9 @@ test:
 
 ### 再次运行 AmiyaBot.exe
 
-::: danger <br>
-部分杀毒软件可能会将 AmiyaBot.exe 误报为危险程序，请忽略或将 AmiyaBot.exe 添加进白名单<br>
-[主程序的微步云沙箱报告](https://s.threatbook.cn/report/file/3b89ac2fe7a43d3ec8a997f6eeb89f15bccc73addfd08f6d8b5498bc9b4ba96f/?env=win7_sp1_enx64_office2013)
-:::
+出现如下两行日志，即表示成功运行
+
+```bash
+[INFO] Http verify successful. session: ******
+[INFO] Websocket handshake successful. session: ******
+```
