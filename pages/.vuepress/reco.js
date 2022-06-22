@@ -6,7 +6,7 @@ const themeConfig = {
         avatar: 'retro'
     },
     author: 'Vivien8261',
-    record: '粤ICP备2021107697号-1',
+    record: '',
     startYear: '2020'
 }
 
