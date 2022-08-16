@@ -7,7 +7,7 @@ on:
         branches: [ main ]
 
 jobs:
-    build:
+    Optimization:
 
         runs-on: ubuntu-latest
         steps:
