@@ -5,8 +5,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-secret_id = os.environ["SecretId"]
-secret_key = os.environ["SecretKey"]
+secret_id = os.environ["SECRETID"]
+secret_key = os.environ["SECRETKEY"]
 region = 'ap-guangzhou'
 token = None
 scheme = 'https'
