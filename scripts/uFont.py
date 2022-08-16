@@ -1,5 +1,7 @@
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
+
+import os
 import sys
 import logging
 
