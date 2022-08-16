@@ -11,17 +11,17 @@ jobs:
 
         runs-on: ubuntu-latest
         steps:
-            -  name: Fetch sources
-                uses: actions/checkout@v2
+            - name: Checkout
+              uses: actions/checkout@v2.4.2
                     
             - name: Use Python 3.8
-             uses: actions/setup-python@v4
-             with:
-                 python-version: '3.8' 
-             run: 
-                 pip install fontTools cos-python-sdk-v5 brotli
+              uses: actions/setup-python@v4
+              with:
+                  python-version: '3.8' 
+                  run: 
+                      pip install fontTools cos-python-sdk-v5 brotli
 
             - name: Font Optimization
-             run: |
+              run: |
                  python scripts/minfont.py
                  python scripts/uFont.py
