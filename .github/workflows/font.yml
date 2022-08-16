@@ -20,7 +20,10 @@ jobs:
                   python-version: '3.8' 
 
             - name: Font Optimization
+              env:
+                  SECRETID: $SECRETID
+                  SECRETKEY: $SECRETKEY
               run: |
-                 pip install fontTools cos-python-sdk-v5 brotli
-                 python scripts/minfont.py
-                 python scripts/uFont.py
+                  pip install fontTools cos-python-sdk-v5 brotli
+                  python scripts/minfont.py
+                  python scripts/uFont.py
