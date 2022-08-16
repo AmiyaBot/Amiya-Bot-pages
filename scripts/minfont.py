@@ -17,7 +17,7 @@ from fontTools.ttLib import TTFont
 origin_path = join('pages')
 ignore_dirs = ['dist', 'public', '.DS_Store']
 out_path = join('fonts')
-fonts = join('HarmonyOS_Sans_SC.ttf')
+font = join('scripts', 'HarmonyOS_Sans_SC.ttf')
 
 content = ''
 
@@ -41,15 +41,14 @@ def read(path):
 print('读取文件中...')
 read(origin_path)
 
-for font in fonts:
-    print(f'正在处理 {font}')
-    if not exists(out_path):
-        os.mkdir(out_path)
-    f = TTFont(font)
+print(f'正在处理 {font}')
+if not exists(out_path):
+    os.mkdir(out_path)
+f = TTFont(font)
 
-    subsetter = subset.Subsetter()
+subsetter = subset.Subsetter()
 
-    subsetter.populate(text=content)
-    subsetter.subset(f)
-    f.flavor = 'woff2'
-    f.save(join(out_path, 'Harmony.min.woff2')))
+subsetter.populate(text=content)
+subsetter.subset(f)
+f.flavor = 'woff2'
+f.save(join(out_path, 'Harmony.min.woff2'))
