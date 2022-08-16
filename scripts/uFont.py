@@ -13,6 +13,9 @@ region = 'ap-guangzhou'
 token = None
 scheme = 'https'
 
+print(secret_id)
+print(secret_key)
+
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
