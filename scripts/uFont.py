@@ -7,14 +7,11 @@ import logging
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-secret_id = os.environ.get('SECRETID')
-secret_key = os.environ.get('SECRETKEY')
+secret_id = join(''', os.environ.get('SECRETID'), ''')
+secret_key = join(''', os.environ.get('SECRETKEY'), ''')
 region = 'ap-guangzhou'
 token = None
 scheme = 'https'
-
-print(type(os.environ.get('SECRETID')))
-print(type(os.environ.get('SECRETKEY')))
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
